@@ -1,0 +1,195 @@
+///////////////////////////////////////////////
+/// AUTH: LOGIN, SIGNUP AND RESET PASSWORD ///
+///////////////////////////////////////////////
+.auth-bg{
+    background: #fbf4f3;
+    .auth-wrapper{
+        .auth-wrapper-inner {
+            padding: 15px 15px 0;
+        }
+        .back-link {
+            color: $title-font-color;
+            font-size: 20px;		
+            line-height: 24px;
+            font-family: $title-font-semi;
+            .icon-arrow-left {
+                font-size: 14px;
+                margin-right: 15px;
+                display: inline-block;
+                color: $primary-color;
+            }
+        }
+        .auth-banner-block {
+            padding: 35px 0;
+            .auth-logo {
+                display: block;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+        }
+        .auth-form-block {
+            background: #ffffff;
+            margin: 0 -15px;
+            padding: 35px 30px;
+            .ant-form-item {
+                margin-bottom: 15px;
+            }
+            .input-field,
+            .ant-input {
+                padding-left: 0;
+                color: $title-font-color;
+                @include opacity(0.7);
+                font-size: 14px;	
+                line-height: 16px;
+                border: none;
+                height: 48px;
+                @include border-radius(0);
+                border-bottom:  0.5px solid #D1D5D8;
+                @include placeholder($title-font-color, 0.7);
+                &:focus {
+                    @include opacity(1);
+                    border:none;
+                    border-bottom:  0.5px solid #D1D5D8;
+                    box-shadow: none;
+                }
+                &:hover {
+                    @include opacity(1);
+                    border-bottom:  0.5px solid #D1D5D8;
+                }
+            }
+            .has-error 
+            .ant-input-affix-wrapper 
+            .ant-input {
+                border: none;
+                border-bottom:  0.5px solid #D1D5D8;
+                &:focus {
+                    border: none;
+                    box-shadow: none;
+                    border-bottom:  0.5px solid $primary-color;
+                }
+            }
+            .ant-form-explain {
+                padding: 5px 0;
+                font-size: 12px;
+            }
+            .forgot-text-block {
+                display: block;
+            }
+            .light-text {
+                @include opacity(0.7);
+                color: $sub-font-color;
+                font-size: 13px;
+                line-height: 15px;
+                margin-top: 10px;
+                display: inline-block;
+                text-decoration: underline; 
+                &:hover { 
+                    @include opacity(1);
+                }
+            }
+            .form-btn-block {
+                margin-top: 20px;
+                margin-bottom: 25px;
+                padding: 0 10px; 
+                display: block; 
+            }
+            .form-submit-btn {
+                background: $primary-color;
+                color: #ffffff;
+                font-size: 16px;	
+                line-height: 20px;	
+                text-align: center;
+                @include border-radius(32px);
+                border: none;
+                width: 100%;
+                height: 50px;
+                display: block; 
+                &:hover {
+                    background: rgba($primary-color,0.9);
+                }
+            }
+            .inline-text {
+                display: block;
+                text-align: center;
+                margin-bottom: 15px;
+                @include opacity(0.7);
+                color: $sub-font-color;
+                font-size: 13px;
+                line-height: 15px;
+                margin-top: 10px;
+            }
+            .social-btn {
+                border: none;
+                box-shadow: none; 
+                height: auto;
+                &:focus {
+                    border: none;
+                    box-shadow: none; 
+                }
+            }
+            .social-btn-block {
+                display: block;
+                text-align: center;
+                margin-bottom: 24px;
+            }
+        }
+        .bottom-link-block {
+            font-size: 12px;	
+            line-height: 14px;	
+            text-align: center;
+            display: block;
+        }
+        .concatinate-text {
+            display: inline-block;
+            color: $sub-font-color;
+        }
+        .forward-link {
+            margin-left: 5px;
+            color: $primary-color;
+            font-family: $proxima-nova-semi-bold;
+            text-decoration: underline;
+            &:hover {
+                color: $title-font-color;
+            }
+        }
+        .web-view {
+            display: none;
+        }
+        .mobile-view {
+            display: block;
+        }
+    } 
+        
+    ///MEDIA QUERIES  
+    @include min-xs-large{  
+        position: relative;
+        background: transparent;
+        height: 100vh;
+        .auth-wrapper{ 
+            background: #ffffff;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            .auth-header {
+                display: none;
+            }
+            .web-view {
+                display: block;
+            }
+            .mobile-view {
+                display: none;
+            }
+            .auth-banner-block {
+                padding-bottom: 50px;
+                .auth-logo {
+                    display: none;
+                }
+            }
+        }
+    }
+    // end
+}

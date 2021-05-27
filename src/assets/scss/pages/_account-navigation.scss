@@ -1,0 +1,86 @@
+///////////////////////////////////////////////
+/// Page: Account navigation Page ///
+///////////////////////////////////////////////  
+
+@include max-xs{
+    .account-nav-wrapper {
+        display: block;
+        background: $bg-color;
+        height: calc(70vh - 152px); 
+        
+        .dark-banner-wrapper {
+            display: block;
+            .dark-banner-section {
+                display: flex;
+                padding: 20px;
+                align-items: center;
+                background: $primary-color;
+                .content-block {
+                    flex-grow: 1;
+                    .title-text {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: #FFFFFF;
+                        margin-bottom: 0;
+                        font-family: $font-family-base;
+                    }
+                    .sub-text {
+                        font-size: 12px;
+                        color: #FFFFFF;
+                        font-family: $font-family-base;
+                    }
+                    .icon-block { 
+                        margin-right: 10px;
+                    }
+                }
+                .edit-block { 
+                    flex-grow: 0;
+                    .edit-btn {
+                        height: 20px;
+                        padding: 0 15px;
+                        font-size: 11px;
+                        color: #FFFFFF; 
+                        font-weight: 500;
+                        background: transparent; 
+                        border: 1px solid #FFFFFF;
+                        @include border-radius(32px);
+                        &:hover {
+                            color: $primary-color;
+                            background: #FFFFFF;
+                        }
+                    }
+                    .edit-icon {
+                        font-size: 10px;
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
+        .main-header {
+            .profile-dropdown-wrapper {
+                box-shadow: none;
+                .dropdown-body-wrapper {
+                    .link-item {
+                        background: #fff;
+                        &:hover {
+                            background: rgba(238, 238, 238, 0.5);
+                        }
+                    }
+                    .first-item,
+                    .last-item {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+    // end
+} 
+
+
+@include max-xs{
+    .account-nav-wrapper {
+        display: none;
+    }
+    // end
+}

@@ -1,0 +1,56 @@
+///////////////////////////////////////////////
+/// STATIC PAGES: TOC, PRIVACY PLICY, ETC.  ///
+///////////////////////////////////////////////
+.static-content-wrapper{ 
+    background-color: #fff;
+    padding: 40px 0 80px; 
+    &.user-logged{
+        padding-top: 100px;
+    }
+    .primary-title{
+        font-size: 22px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        color: #354266;
+    }
+    p{
+        font-size: 14px;
+        color: #586581;
+        line-height: 1.8; 
+    }
+    .static-content-inner{
+        color: #586581;
+        font-size: 14px;
+        line-height: 1.6;
+        word-wrap: break-word;
+        h2{
+            font-size: 18px;
+            color: #354266;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        ol{
+            list-style: inside;
+            padding-left: 15px;
+            margin-bottom: 40px;
+            li{
+                line-height: 1.8;
+                margin-bottom: 15px;
+            }
+        }
+        .long-form-content {
+            margin-bottom: 20px;
+            strong{
+                margin-bottom: 20px;
+                font-size: 16px;
+                color: #354266;
+                font-weight: 500; 
+                display: block; 
+                font-family: $title-font;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

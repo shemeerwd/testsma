@@ -1,0 +1,514 @@
+///////////////////////////////////////////////
+/// Page: orders status ///
+///////////////////////////////////////////////  
+
+.my-profile-section {
+    .order-status-section {
+        .dark-header-section {
+            padding: 20px;
+            margin: 0 -10px;
+            background: $primary-color;
+            .head-title {
+                display: inline-block;
+                color: #ffffff;
+                font-size: 14px;
+                font-weight: 600;
+                font-family: $font-family-base;
+            }
+            .ant-select-selection {
+                height: 42px;
+                padding: 0 15px;
+                font-size: 14px;
+                font-weight: 500;
+                color: $title-font-color;
+                font-family: $font-family-base;
+                box-shadow: 0 -2px 10px 0 rgba(189, 179, 179, 0.54);
+            }
+
+            .ant-select-selection__rendered {
+                line-height: 42px;
+            }
+
+            .anticon-down {
+                right: 15px;
+            }
+
+            .details-block {
+                display: block;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                border-bottom: 1px solid rgba(#E2E2E2, 0.2);
+
+                .item-details {
+                    display: inline-block;
+                    color: #ffffff;
+                    font-size: 14px;
+                    font-weight: 600;
+                    font-family: $font-family-base;
+                }
+
+                .thin-text {
+                    font-weight: 400;
+                    margin-left: 20px;
+                }
+            }
+
+            .info-block {
+                display: flex;
+
+                .item-info {
+                    flex-grow: 1;
+                    color: #ffffff;
+                    font-size: 14px;
+                    display: block;
+                    font-family: $font-family-base;
+                }
+
+                .sub-text {
+                    font-size: 12px;
+                    display: block;
+                }
+            }
+        }
+        .block-wrapper {
+            padding-top: 30px; 
+        }
+
+        .steps-track-wrapper {
+            // Progress Tracker
+            .track-progress {
+                margin: 0;
+                width: 100%;
+                padding: 0 0 30px 86px;  
+                display: inline-block;
+                li {
+                    list-style-type: none;
+                    display: block;
+                    position: relative;
+                    border-left: 4px rgba(#D0D4D9,0.4) dotted;
+                    text-align: left;
+                    padding-bottom: 30px;
+                    height: 100%;
+                    &:first-child {
+                        .status-info-block {
+                            &:before {
+                                height: calc(50% - 8px);
+                                width: 6px;
+                                content: '';
+                                position: absolute;
+                                background: #fff;
+                                left: -5px;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        padding-bottom: 0;
+                        .status-info-block {
+                            &:before {
+                                height: calc(50% - 2px);
+                                width: 6px;
+                                content: '';
+                                position: absolute;
+                                background: #fff; 
+                                left: -5px;
+                                bottom: 0;
+                            }
+                        }
+                    }
+
+                    &:after {
+                        content: "";
+                    }
+
+                    &:before {
+                        position: relative;
+                        float: left;
+                        top: 8px;
+                        left: -7px;
+                        line-height: 116px;
+                    }
+                    .time-block {
+                        position: absolute;
+                        left: -86px;
+                        top: 3px;
+                        font-size: 11px;
+                        font-weight: 400;
+                        font-family: $font-family-base;
+                        color: $sub-font-color;
+                    }
+
+                    .status-info-block {
+                        display: block;
+                        position: relative;
+                    }
+                    .icon-block {
+                        margin-left: 10px;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    .status-content-block {
+                        display: inline-block;
+                        text-align: left;
+                        vertical-align: middle;
+                        padding-left: 18px;
+                    }
+                    .status-title-text {
+                        font-size: 14px;	
+                        font-weight: 500;
+                        margin-bottom: 0;
+                        line-height: 15px;
+                        color: $title-font-color;
+                        font-family: $font-family-base;
+                    }
+                    .sub-text {
+                        font-size: 12px;	
+                        font-weight: 400;
+                        display: block;
+                        line-height: 16px;
+                        color: $sub-font-color;
+                        font-family: $font-family-base;
+                    }
+                }
+
+                li.done {
+                    font-weight: bold;
+                    border-left: 4px #D0D4D9 dotted;
+
+                    &:before {
+                        content: "";
+                        background: #20AB2C;
+                        height: 10px;
+                        width: 10px;
+                        line-height: 16px;
+                        border: none;
+                        border-radius: 50%;
+                        z-index: 1;
+                    }
+                }
+
+                li.todo {
+                    &:before {
+                        content: "";
+                        background: #ED1C24;
+                        height: 10px;
+                        width: 10px;
+                        border-radius: 50%;
+                    }
+                    .icon-block,
+                    .status-content-block {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+
+        .footer-section {
+            margin-bottom: 60px;
+            padding: 20px;
+            display: flex;
+            margin: 0 -20px;
+            align-items: center;
+            border-top: 10px solid $bg-color;
+
+            .profile-block {
+                flex-grow: 1;
+
+                .profile-image {
+                    width: 47px;
+                    height: 47px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    background: rgba(#959595, 0.2);
+                    @include border-radius(50%);
+                }
+
+                .image {
+                    object-fit: cover;
+                    width: 100%;
+                    max-width: 100%;
+                }
+
+                .content-block {
+                    .title-text {
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+
+            .content-block {
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 12px;
+                max-width: 170px;
+
+                .title-text {
+                    font-size: 16px;
+                    display: block;
+                    margin-bottom: 0;
+                    color: $title-font-color;
+                    font-family: $title-font-bold;
+                }
+
+                .sub-text {
+                    font-size: 12px;
+                    font-weight: 500;
+                    display: block;
+                    color: $sub-font-color;
+                    font-family: $font-family-base;
+                }
+            }
+
+            .contact-block {
+                flex-grow: 0;
+
+                .call-icon-block {
+                    width: 41px;
+                    height: 41px;
+                    text-align: center;
+                    display: inline-block;
+                    vertical-align: middle;
+                    @include border-radius(50%);
+                    border: 1px solid $primary-color;
+
+                    .call-icon {
+                        line-height: 40px;
+                        color: $primary-color;
+                    }
+                }
+
+                .content-block {
+                    display: none;
+                }
+            }
+        }
+
+
+        ///MEDIA QUERIES  
+        @include max-xs-small{
+            .dark-header-section {
+                .details-block {        
+                    .item-details {
+                        font-size: 12px;
+                    }
+    
+                    .thin-text {
+                        font-size: 11px;
+                    }
+                }
+            }
+            .steps-track-wrapper { 
+
+                // Progress Tracker
+                .track-progress {
+                    li {
+                        .time-block {
+                            font-size: 10px;
+                        }        
+                        .icon-block {
+                            width: 20px;
+                            margin-left: 0;
+                        }
+                        .status-content-block {
+                            padding-left: 8px;
+                        }
+                        .status-title-text {
+                            font-size: 12px;
+                        }
+                        .sub-text {
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }        
+        }
+
+        @include min-sm {
+            .dark-header-section {
+                margin-top: -20px;
+            }
+
+            .footer-section {
+                padding: 20px;
+                margin: 0;
+                border-top: 1px solid rgba(#959595, 0.2);
+
+                .profile-block .content-block {
+                    max-width: auto;
+                }
+
+                .contact-block {
+                    .call-icon-block {
+                        width: 32px;
+                        height: 32px;
+
+                        .call-icon {
+                            line-height: 30px;
+                        }
+                    }
+
+                    .content-block {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        @include min-md {
+            .dark-header-section {
+                .header-info-wrapper {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .details-block {
+                    display: inline-block;
+                    border-bottom: none;
+                    flex-grow: 1;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+
+                .info-block {
+                    flex-grow: 1;
+
+                    .item-info {
+                        &:last-child {
+                            flex-grow: 0;
+                        }
+                    }
+                }
+            }
+
+            .steps-track-wrapper {
+
+                // Progress Tracker
+                .track-progress {
+                    padding: 90px 0 70px;
+                    li {
+                        display: inline-block;
+                        border: none;
+                        border-top: 4px dotted #D0D4D9;
+                        line-height: 42px;
+                        text-align: center;
+                        padding-bottom: 0;
+                        width: 20%;
+                        float: left;
+                        &:first-child {
+                            .status-info-block {
+                                &:before {
+                                    width: calc(50% - 5px);
+                                    height: 6px;
+                                    top: -21px;
+                                    left: 0;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            padding-bottom: 0;
+                            .status-info-block {
+                                &:before {
+                                    width: calc(50% - 5px);
+                                    height: 6px;
+                                    top: -21px;
+                                    left: 50%;
+                                    margin-left: 5px;
+                                }
+                            }
+                        }
+        
+                        &:before {
+                            position: relative;
+                            float: left;
+                            top: -7px;
+                            left: calc(50% - 5px);
+                            line-height: 1em;
+                        }
+                        .time-block {
+                            left: 50%;
+                            transform: translateX(-50%);
+                            top: -50px;
+                        }        
+                        .status-info-block {
+                            margin-top: 16px;
+                        }
+                        .icon-block {
+                            margin-left: 0;
+                            margin-bottom: 10px;
+                            display: block;
+                            height: 32px;
+                            img {
+                                margin: auto;
+                            }
+                        }
+                        .status-content-block {
+                            display: block;
+                            text-align: center;
+                            padding: 0 10px;
+                        }
+                        .status-title-text {
+                            margin-bottom: 6px;
+                        }
+                        .sub-text {
+                            line-height: 14px;
+                        }
+                    }
+        
+                    li.done {
+                        border: none;
+                        border-top: 4px #D0D4D9 dotted;
+                    }
+        
+                    li.todo {
+                        border-top: 4px rgba(#D0D4D9,0.4) dotted;
+                    }
+                }
+            }        
+
+            .footer-section {
+                .profile-block .content-block {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        @include min-lg {
+            .dark-header-section {
+                .head-title {
+                    font-size: 18px;
+                }
+                .details-block {
+                    .item-details {
+                        font-size: 18px;
+                    }
+                }
+            }
+            
+            .steps-track-wrapper {
+                // Progress Tracker
+                .track-progress {
+                    li .status-content-block {
+                        padding: 0 20px;
+                    }
+                }
+            }
+        }
+
+        // end
+
+        @include min-xlg {
+            .steps-track-wrapper {
+                // Progress Tracker
+                .track-progress {
+                    li .status-content-block {
+                        padding: 0 30px;
+                    }
+                }
+            }
+        }
+
+        // end
+    }
+}

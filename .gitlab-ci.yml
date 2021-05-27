@@ -1,0 +1,50 @@
+   image: node:latest
+   stages:
+    - lint
+    - deploy
+
+   cache:
+      paths:
+        - node_modules/
+
+   step-lint:
+      stage: lint
+      only: 
+        - master
+      script:
+        - yarn install
+        - yarn lint
+      tags:
+        - eatin  
+      artifacts:
+       paths:
+            - node_modules/
+       expire_in: 15 mins 10 sec
+
+   step-deploy:
+      only:
+         - master
+      stage: deploy
+      before_script: 
+         - which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
+         - mkdir -p ~/.ssh     
+         - echo -e "$PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+         - chmod 700 ~/.ssh/id_rsa
+         - eval $(ssh-agent -s) 
+         - ssh-add ~/.ssh/id_rsa    
+         - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'   
+         - ssh-keyscan -H $HOST_NAME >> ~/.ssh/known_hosts
+         - chmod 644 ~/.ssh/known_hosts
+         - yarn install
+
+      tags:
+         - eatin
+      script:
+         - yarn run stag
+         - ssh -v -i ~/.ssh/id_rsa ubuntu@$HOST_NAME "rm -Rf delivery.eatin.com"
+         - scp -v -i ~/.ssh/id_rsa -r build/ ubuntu@$HOST_NAME:delivery.eatin.com
+
+   
+
+   
+       
